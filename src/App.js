@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import Sun from './assets/img2.jpg';
 import './App.css';
+import ManageData from './components/ManageData';
+import ListRender from './components/ListRender';
+import ConditionalRender from './components/ConditionalRender';
+import TesteOpTernario from './components/TesteOpTernario';
+import ShowUserName from './components/ShowUserName';
+import Details from './components/Details';
 
 function App() {
+  const name = 'Pedro'
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <h1>Avançando em React!</h1>
+   
+      <div>
+        {/*Imagem em public */}
+        <img src="/img1.jpg" alt="imagem por do sol" />
+      </div>
+        {/*Imagem em ASSETS */}
+        <div>
+          <img src={Sun} alt="Sol" />
+          <button onClick = {() => {console.log('Essa é uma imagem do por do Sol!')}}>Clique aqui para testars</button>
+          </div>
+          <ManageData/>
+          <ListRender/>
+          <ConditionalRender/>
+          <TesteOpTernario/>
+          {/**PROPS */}
+          <ShowUserName name ={name}/>
+          {/**destructuring */}
+          <Details brand = 'Puma' km ={10000} color = 'Azul'/>
+        </div>
+   
   );
 }
 
