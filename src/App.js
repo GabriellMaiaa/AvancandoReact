@@ -30,7 +30,10 @@ function App() {
           {/**PROPS */}
           <ShowUserName name ={name}/>
           {/**destructuring */}
-          <Details brand = 'Puma' km ={10000} color = 'Azul'/>
+          <Details brand = 'Puma' km ={0} color = 'Azul' novo = {true}/>
+          {/**Reaproveitando código */}
+          <Details brand = 'Chevrolet' km ={100300} color = 'Preto fosco' novo = {false}/>
+          <Details brand = 'Fiat' km ={25440} color = 'Prata' novo = {false}/>
         </div>
    
   );
