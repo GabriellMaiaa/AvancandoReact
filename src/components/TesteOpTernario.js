@@ -14,7 +14,7 @@ const TesteOpTernario = () => {
             </div>
         ) : (
             <div>
-                <p>NÃO PODE alugar pois é menor</p>
+                <p>NÃO PODE alugar pois é menor, e é proibido!</p>
             </div>
         )}
     </div>
