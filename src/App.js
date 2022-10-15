@@ -39,6 +39,7 @@ function App() {
           {/**Reaproveitando código */}
           <Details brand = 'Chevrolet' km ={100300} color = 'Preto fosco' novo = {false}/>
           <Details brand = 'Fiat' km ={25440} color = 'Prata' novo = {false}/>
+
           {/**LOOP em Array de Objetos// MUITO BOMMM*/}
           {cars.map((car) => (
             <Details 
@@ -48,6 +49,7 @@ function App() {
             newCar={car.newCar}/>
           ))}
           <Details brand='Fiat' km={34555} color= 'Prata' novo = {false}/>
+
         </div>
    
   );

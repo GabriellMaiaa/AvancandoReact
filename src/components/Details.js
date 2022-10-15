@@ -1,4 +1,6 @@
+
 import React from 'react'
+
 
 const Details = ({brand, km, color, novo}) => {
   return (
