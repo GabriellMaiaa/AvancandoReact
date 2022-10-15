@@ -6,14 +6,22 @@ import ConditionalRender from './components/ConditionalRender';
 import TesteOpTernario from './components/TesteOpTernario';
 import ShowUserName from './components/ShowUserName';
 import Details from './components/Details';
+import Container from './components/Container';
+import ExecuteFunction from './components/ExecuteFunction';
+
+
 
 function App() {
   const name = 'Pedro'
   const cars =[
     {id: 1, brand: 'KIA', color: 'Amarela', newCar: true , km:0},
-    {id: 1, brand: 'Ferrari', color: 'Vermelha', newCar: true , km: 0},
-    {id: 1, brand: 'Fiat', color: 'Laranja', newCar: false , km: 10003}
+    {id: 2, brand: 'Ferrari', color: 'Vermelha', newCar: true , km: 0},
+    {id: 3, brand: 'Fiat', color: 'Laranja', newCar: false , km: 10003}
   ]
+
+  function showMessage () {
+    console.log("teste")
+  }
   
   return (
     <div className="App">
@@ -43,13 +51,22 @@ function App() {
           {/**LOOP em Array de Objetos// MUITO BOMMM*/}
           {cars.map((car) => (
             <Details 
+            key={car.id}
             brand={car.brand} 
             color={car.color} 
             km={car.km} 
             newCar={car.newCar}/>
           ))}
           <Details brand='Fiat' km={34555} color= 'Prata' novo = {false}/>
-
+        {/**Children PROP */}
+          <Container nome ="Gabriel Maia">
+            <p>Hoje é dia 15</p>
+          </Container>
+          <Container date ={15}>
+            <p>Continuo testando, hj é dia</p>
+          </Container>
+          {/**Executar função em PROP */}
+          <ExecuteFunction myFunction ={showMessage}/>
         </div>
    
   );
