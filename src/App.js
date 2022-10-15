@@ -8,6 +8,9 @@ import ShowUserName from './components/ShowUserName';
 import Details from './components/Details';
 import Container from './components/Container';
 import ExecuteFunction from './components/ExecuteFunction';
+import { useState } from 'react';
+import Message from './components/Message';
+import ChangeMessageState from './components/ChangeMessageState';
 
 
 
@@ -21,6 +24,11 @@ function App() {
 
   function showMessage () {
     console.log("teste")
+  }
+  const[message, setMessage] = useState("");
+
+  const handleMessage = (msg) => {
+    setMessage(msg)
   }
   
   return (
@@ -67,6 +75,9 @@ function App() {
           </Container>
           {/**Executar função em PROP */}
           <ExecuteFunction myFunction ={showMessage}/>
+          {/**STATE LIFT */}
+          <Message msg = {message}/>
+          <ChangeMessageState handleMessage={handleMessage}/>
         </div>
    
   );
