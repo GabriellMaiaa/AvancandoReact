@@ -9,6 +9,11 @@ import Details from './components/Details';
 
 function App() {
   const name = 'Pedro'
+  const cars =[
+    {id: 1, brand: 'KIA', color: 'Amarela', newCar: true , km:0},
+    {id: 1, brand: 'Ferrari', color: 'Vermelha', newCar: true , km: 0},
+    {id: 1, brand: 'Fiat', color: 'Laranja', newCar: false , km: 10003}
+  ]
   
   return (
     <div className="App">
@@ -34,6 +39,15 @@ function App() {
           {/**Reaproveitando código */}
           <Details brand = 'Chevrolet' km ={100300} color = 'Preto fosco' novo = {false}/>
           <Details brand = 'Fiat' km ={25440} color = 'Prata' novo = {false}/>
+          {/**LOOP em Array de Objetos// MUITO BOMMM*/}
+          {cars.map((car) => (
+            <Details 
+            brand={car.brand} 
+            color={car.color} 
+            km={car.km} 
+            newCar={car.newCar}/>
+          ))}
+          <Details brand='Fiat' km={34555} color= 'Prata' novo = {false}/>
         </div>
    
   );
